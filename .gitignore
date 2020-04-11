@@ -8,8 +8,9 @@ pids
 .lock-wscript
 
 build/Release
-src/databases
+src/database/data
 
+.vscode/
 node_modules
 
 npm-debug.log
