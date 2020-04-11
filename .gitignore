@@ -8,9 +8,12 @@ pids
 .lock-wscript
 
 build/Release
+src/databases
 
 node_modules
 
 npm-debug.log
 
 .DS_Store
+
+.editorconfig
