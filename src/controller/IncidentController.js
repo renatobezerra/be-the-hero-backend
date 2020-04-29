@@ -24,6 +24,8 @@ module.exports = {
 
     const ong_id = req.headers.authorization;
 
+    if(!ong_id) return res.status(401).json({message: 'Not Authorized'});
+
     const exists = await db('ongs')
       .where('id', ong_id)
       .select('*')
