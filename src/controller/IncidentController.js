@@ -53,7 +53,11 @@ module.exports = {
       .select('*')
       .first();
 
-    if (incident.ong_id !== ong_id) return res.status(401).json({status: 'unauthorized'});
+    if (!incident)
+      return res.status(404).json({status: 'incident not found'});
+
+    if (incident.ong_id !== ong_id)
+      return res.status(401).json({status: 'unauthorized'});
 
     await db('incidents').where('id', id).delete();
 
